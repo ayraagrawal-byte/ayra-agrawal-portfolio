@@ -2,7 +2,7 @@
 
 **[Live portfolio](https://ayra-agrawal-portfolio.vercel.app/)**
 
-A custom portfolio for Summer 2027 software engineering internship applications. The format uses a compact introduction, current status, an expandable experience timeline, project cards, and grouped skills, with original violet/mint styling and locally hosted JetBrains Mono typography. Built with Next.js App Router, React, TypeScript, and Tailwind CSS. Static content, a keyboard-accessible jump menu, and theme controls; no application backend, analytics, or contact-form service.
+A personal engineering portfolio connecting backend systems, AI products, and cognitive-science research. Open editorial layouts, serif headlines, warm paper/deep-green themes, and locally hosted technology logos keep the visual identity distinct. Built with Next.js, React, TypeScript, and Tailwind CSS; no application backend or analytics service.
 
 ## Develop
 
@@ -50,3 +50,7 @@ Semantic landmarks, keyboard-operable native details elements, a skip link, visi
 ## Dependency audit
 
 The production-only audit returned zero vulnerabilities on October 15, 2026. The full audit reported five high-severity findings through the ESLint configuration's glob/matching development dependency chain; npm's suggested remedy is a major downgrade of `eslint-config-next`. That downgrade was not applied. Reassess when compatible patched lint dependencies are available.
+
+## Technology logos
+
+Selected SVG logos are served locally from `public/tech/`. Devicon assets are MIT-licensed (included license); Simple Icons assets are CC0. Individual brand marks remain the property of their owners. Logos are decorative beside visible technology names.
