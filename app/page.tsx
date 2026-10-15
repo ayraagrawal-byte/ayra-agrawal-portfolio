@@ -129,8 +129,8 @@ export default function Home() {
                     <Image
                       src="/recall-workspace.jpg"
                       alt="Recall controlled demo showing a scripted answer and linked PDF source"
-                      width={1600}
-                      height={1000}
+                      width={1280}
+                      height={720}
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                     <figcaption>
@@ -157,8 +157,8 @@ export default function Home() {
                     <Image
                       src="/spoton-home.jpg"
                       alt="SpotOn public demo landing page with squat recording, replay, and comparison workflow"
-                      width={1600}
-                      height={1000}
+                      width={2560}
+                      height={1440}
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                     <figcaption>SpotOn · collaborative project</figcaption>

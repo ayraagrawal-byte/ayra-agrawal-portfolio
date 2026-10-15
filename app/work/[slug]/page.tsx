@@ -90,8 +90,8 @@ export default async function CaseStudy({
               <Image
                 src="/recall-workspace.jpg"
                 alt="Authentic screenshot of the Recall public controlled demo"
-                width={1600}
-                height={1000}
+                width={1280}
+                height={720}
                 sizes="(max-width: 640px) 100vw, 800px"
               />
               <figcaption className="caption">
