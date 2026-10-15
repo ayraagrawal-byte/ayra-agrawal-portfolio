@@ -11,14 +11,14 @@ export function SystemFigure({
     <figure className={`system-figure ${kind}`}>
       <div className="figure-top">
         <span>
-          {trace ? "TRACELAB / INGESTION PATH" : "RECALL / EVIDENCE PATH"}
+          {trace ? "How a trace gets stored" : "From a PDF to an answer"}
         </span>
         <span>Architecture sketch</span>
       </div>
       <ol className="system-steps">
         {steps.map((s, i) => (
           <li key={s}>
-            <span className="node-number">0{i + 1}</span>
+            <span className="node-number">{i + 1}.</span>
             <strong>{s}</strong>
             <small>
               {
@@ -40,12 +40,12 @@ export function SystemFigure({
           </li>
         ))}
       </ol>
-      <div className="figure-bottom">
+      <figcaption className="figure-bottom">
         <span className="status-dot" />
         {trace
           ? "202 Accepted ≠ persisted"
-          : "Every answer leads back to a source."}
-      </div>
+          : "Local RAG pipeline · citations link to source pages"}
+      </figcaption>
     </figure>
   );
 }

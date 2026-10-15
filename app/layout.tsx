@@ -1,6 +1,29 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Header, Footer } from "@/components/site-shell";
 import "./globals.css";
+const fraunces = localFont({
+  src: [
+    {
+      path: "./fonts/fraunces-normal.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/fraunces-italic.woff2",
+      weight: "100 900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+const dmSans = localFont({
+  src: "./fonts/dm-sans-normal.woff2",
+  weight: "100 1000",
+  variable: "--font-dm-sans",
+  display: "swap",
+});
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ||
@@ -16,7 +39,8 @@ export const metadata: Metadata = {
     "Rutgers CS and psychology student building backend systems, full-stack applications, and AI products. Selected work: TraceLab, Recall, and SpotOn.",
   openGraph: {
     title: "Ayra Agrawal — Software Engineer",
-    description: "Software engineering with a human perspective.",
+    description:
+      "Hi, I’m Ayra. CS + Psychology at Rutgers. A few things I’ve built, and the questions behind them.",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
@@ -30,7 +54,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${fraunces.variable} ${dmSans.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

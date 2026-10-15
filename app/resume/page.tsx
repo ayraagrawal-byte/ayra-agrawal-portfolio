@@ -6,11 +6,11 @@ export const metadata: Metadata = {
 export default function Resume() {
   return (
     <main id="main" className="shell resume-page">
-      <span className="eyebrow">Background & experience</span>
+      <span className="eyebrow">The résumé version</span>
       <h1>
         Résumé<em>.</em>
       </h1>
-      <p>A public copy of my resume, with my phone number removed.</p>
+      <p>A little more about what I’ve been working on.</p>
       <a className="button" href="/Ayra-Agrawal-Resume.pdf" download>
         Download PDF <span aria-hidden="true">↓</span>
       </a>

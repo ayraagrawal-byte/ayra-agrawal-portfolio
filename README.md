@@ -2,7 +2,9 @@
 
 **[Live portfolio](https://ayra-agrawal-portfolio.vercel.app/)**
 
-A personal engineering portfolio connecting backend systems, AI products, and cognitive-science research. Open editorial layouts, serif headlines, warm paper/deep-green themes, and locally hosted technology logos keep the visual identity distinct. Built with Next.js, React, TypeScript, and Tailwind CSS; no application backend or analytics service.
+A personal corner of the internet connecting backend systems, AI, and cognitive-science research. Warm ivory, lilac, apricot, Fraunces headings, and DM Sans body text; a complementary deep-plum dark theme. Built with Next.js, React, TypeScript, and Tailwind CSS; no application backend or analytics service.
+
+The Lilac & Apricot redesign is on the local `redesign/lilac-apricot` branch for review. Do not deploy or publish before final approval.
 
 ## Develop
 
@@ -27,17 +29,19 @@ The build uses webpack explicitly so the tested local and hosted build paths mat
 ## Content
 
 - `lib/content.ts`: project summaries, links, and experience.
+- `lib/content.ts` also contains the three short, source-backed “currently” notes.
 - `app/page.tsx`: homepage sections.
 - `app/work/[slug]/page.tsx`: source-backed TraceLab and Recall case studies.
 - `components/`: shared site shell, theme switch, and architecture figure.
 - `app/globals.css`: light/dark tokens, responsive layouts, focus states, and reduced-motion support.
 - `public/`: authentic demo screenshots and the approved phone-redacted public resume.
+- `app/fonts/`: self-hosted Fraunces and DM Sans variable fonts, optimized with `next/font/local`, and their SIL Open Font Licenses.
 
 All experience copy is based on the supplied resume. Technical claims were cross-checked against the source repositories on October 15, 2026. TraceLab performance numbers are reported local API ingestion results, not independently rerun benchmark results or production persistence throughput. SpotOn is credited as a three-person collaboration. Recall's public demo is controlled, with recorded execution rather than live inference.
 
 ## Deployment
 
-Deploy this directory as a **new** Vercel project using the Next.js preset. Do not link it to Recall or other existing application projects. No credentials or runtime secrets are required.
+The repository is already linked to its own portfolio Vercel project. Preserve that link and never link it to Recall or other application projects. Pushing the default branch can trigger production deployment; keep review changes local until approved. No runtime secrets are required.
 
 Vercel's `VERCEL_PROJECT_PRODUCTION_URL` resolves the social-image base URL. For another host, set `NEXT_PUBLIC_SITE_URL` to the canonical public origin before building. Never put credentials in a `NEXT_PUBLIC_` variable.
 

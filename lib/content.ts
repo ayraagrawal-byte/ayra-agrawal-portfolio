@@ -5,6 +5,7 @@ export const links = {
   resume: "/resume",
 };
 export const projects = [
+  // Project facts are kept separate from homepage presentation.
   {
     slug: "tracelab",
     number: "01",
@@ -49,6 +50,24 @@ export const projects = [
     role: "Co-developed the squat-analysis experience, local-first workout storage, optional AI feedback, and voice guidance on a three-person team.",
     decision:
       "Keep full pose recordings in the browser; make cloud feedback and workout summaries optional.",
+  },
+] as const;
+// Update these notes when activities change; each reflects the supplied resume.
+export const currently = [
+  {
+    label: "Building",
+    text: "Backend systems for Love Blue with Hack4Impact at Rutgers.",
+    href: "#experience",
+  },
+  {
+    label: "Learning",
+    text: "Frontend engineering through the Rutgers Blueprint fellowship.",
+    href: "#experience",
+  },
+  {
+    label: "Exploring",
+    text: "Cognition, behavioral data, and careful measurement at CALC Lab.",
+    href: "#research",
   },
 ] as const;
 export const experience = [

@@ -63,45 +63,23 @@ export function TechLogo({ name }: { name: string }) {
 const groups = [
   {
     title: "Languages",
-    items: ["Python", "TypeScript", "JavaScript", "Java", "C", "SQL", "R"],
+    items: ["Python", "TypeScript", "SQL", "R"],
+    more: ["JavaScript", "Java", "C"],
   },
   {
-    title: "Applications",
-    items: [
-      "React",
-      "Next.js",
-      "React Native",
-      "Expo",
-      "FastAPI",
-      "Node.js",
-      "Tailwind CSS",
-    ],
+    title: "Frontend",
+    items: ["React", "Next.js", "React Native", "Tailwind CSS"],
+    more: ["Expo", "Node.js"],
   },
   {
-    title: "Data & AI",
-    items: [
-      "PostgreSQL",
-      "pgvector",
-      "Redis",
-      "Supabase",
-      "SQLAlchemy",
-      "Ollama",
-      "MediaPipe",
-      "Gemini",
-    ],
+    title: "Backend + data",
+    items: ["FastAPI", "PostgreSQL", "Redis", "Supabase"],
+    more: ["pgvector", "SQLAlchemy", "Ollama", "MediaPipe", "Gemini"],
   },
   {
-    title: "Infrastructure & testing",
-    items: [
-      "Docker",
-      "AWS EC2",
-      "Git",
-      "GitHub Actions",
-      "Vercel",
-      "Pytest",
-      "Vitest",
-      "Playwright",
-    ],
+    title: "Tools + infrastructure",
+    items: ["Docker", "AWS EC2", "Git", "Pytest"],
+    more: ["GitHub Actions", "Vercel", "Vitest", "Playwright"],
   },
 ];
 export function TechStack() {
@@ -111,14 +89,14 @@ export function TechStack() {
       className="toolkit-section shell"
       aria-labelledby="toolkit-title"
     >
-      <div className="section-head">
-        <span className="eyebrow">02 / Technical toolkit</span>
-        <h2 id="toolkit-title">
-          What I work
-          <br />
-          <em>with.</em>
-        </h2>
-        <p>Across engineering projects, research, and coursework.</p>
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">My toolkit</p>
+          <h2 id="toolkit-title">
+            Things I reach <em>for.</em>
+          </h2>
+        </div>
+        <p>Tools from projects, research, and coursework.</p>
       </div>
       <div className="toolkit-grid">
         {groups.map((g) => (
@@ -135,6 +113,24 @@ export function TechStack() {
           </div>
         ))}
       </div>
+      <details className="toolkit-more">
+        <summary>A few more from my projects & coursework</summary>
+        <div className="toolkit-grid">
+          {groups.map((g) => (
+            <div className="toolkit-group" key={g.title}>
+              <h3>{g.title}</h3>
+              <ul>
+                {g.more.map((name) => (
+                  <li key={name}>
+                    <TechLogo name={name} />
+                    <span>{name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </details>
     </section>
   );
 }

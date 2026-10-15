@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/content";
 import { SystemFigure } from "@/components/system-figure";
+import { TechLogo } from "@/components/tech-stack";
 export function generateStaticParams() {
   return [{ slug: "tracelab" }, { slug: "recall" }];
 }
@@ -30,14 +31,12 @@ export default async function CaseStudy({
   if (!project || slug === "spoton") notFound();
   const trace = slug === "tracelab";
   return (
-    <main id="main" className="shell case-main">
+    <main id="main" className={`shell case-main case-${slug}`}>
       <Link className="back-link" href="/#work">
         ← All selected work
       </Link>
       <header className="case-hero">
-        <span className="eyebrow">
-          {project.category} / Engineering case study
-        </span>
+        <span className="eyebrow">A closer look · {project.category}</span>
         <h1>
           {project.name}
           <em>.</em>
@@ -45,24 +44,31 @@ export default async function CaseStudy({
         <p>
           {project.title} {project.description}
         </p>
+        <div className="case-meta">
+          <div>
+            <strong>My work</strong>
+            {trace
+              ? "Backend API, worker, infrastructure"
+              : "Full-stack workspace & RAG pipeline"}
+          </div>
+          <div>
+            <strong>Core technologies</strong>
+            <ul className="stack">
+              {project.stack.map((tool) => (
+                <li key={tool}>
+                  <TechLogo name={tool} />
+                  {tool}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <strong>Explore</strong>
+            <a href={project.github}>Source ↗</a>
+            {project.demo ? <a href={project.demo}>Controlled demo ↗</a> : null}
+          </div>
+        </div>
       </header>
-      <div className="case-meta">
-        <div>
-          <strong>My work</strong>
-          {trace
-            ? "Backend API, worker, infrastructure"
-            : "Full-stack workspace & RAG pipeline"}
-        </div>
-        <div>
-          <strong>Core technologies</strong>
-          {project.stack.join(" · ")}
-        </div>
-        <div>
-          <strong>Explore</strong>
-          <a href={project.github}>Source ↗</a>
-          {project.demo ? <a href={project.demo}>Controlled demo ↗</a> : null}
-        </div>
-      </div>
       <div className="case-layout">
         <aside aria-label="Case study sections">
           <a href="#problem">The problem</a>
@@ -185,6 +191,15 @@ export default async function CaseStudy({
                   pipeline inspectable without operating public uploads, an
                   exposed research database, or hosted model inference.
                 </p>
+                <p>
+                  <a href="https://recall-research-workspace-demo.vercel.app/inside-recall">
+                    Inside Recall
+                  </a>{" "}
+                  lets a visitor follow that recorded run through retrieval,
+                  reranking, context construction, and generation. It makes the
+                  work behind an answer visible without presenting the replay as
+                  live inference.
+                </p>
               </>
             )}
           </section>
@@ -301,9 +316,17 @@ export default async function CaseStudy({
               )}
             </ul>
           </section>
-          <Link className="text-link" href="/#work">
-            ← Back to selected work
-          </Link>
+          <nav className="case-next" aria-label="More projects">
+            <Link className="text-link" href="/#work">
+              ← Back to my projects
+            </Link>
+            <Link
+              className="text-link"
+              href={`/work/${trace ? "recall" : "tracelab"}#main`}
+            >
+              Next: {trace ? "Recall" : "TraceLab"} ↗
+            </Link>
+          </nav>
         </div>
       </div>
     </main>
