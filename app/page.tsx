@@ -112,8 +112,19 @@ export default function Home() {
             </p>
             <ProjectStack stack={recall.stack} name="Recall" />
             <div className="project-links">
-              <Link className="button" href="/work/recall#main">
-                The story behind it <Arrow />
+              <a
+                className="button button-apricot"
+                href={recall.demo}
+                aria-label="View Recall controlled demo"
+              >
+                View demo <Arrow />
+              </a>
+              <Link
+                className="button button-outline"
+                href="/work/recall#main"
+                aria-label="Read Recall case study"
+              >
+                Read case study <Arrow />
               </Link>
               <a className="text-link" href={recall.github}>
                 GitHub <Arrow />
@@ -131,9 +142,6 @@ export default function Home() {
               />
               <figcaption>A look inside the public controlled demo</figcaption>
             </figure>
-            <a className="demo-link" href={recall.demo}>
-              Explore the demo <Arrow />
-            </a>
           </div>
           <div className="recall-foot">
             <p>
@@ -159,8 +167,12 @@ export default function Home() {
             </p>
             <ProjectStack stack={trace.stack} name="TraceLab" />
             <div className="project-links">
-              <Link className="text-link" href="/work/tracelab#main">
-                Follow the architecture <Arrow />
+              <Link
+                className="button"
+                href="/work/tracelab#main"
+                aria-label="Read TraceLab case study"
+              >
+                Read case study <Arrow />
               </Link>
               <a className="text-link" href={trace.github}>
                 GitHub <Arrow />
@@ -216,7 +228,7 @@ export default function Home() {
             </p>
             <ProjectStack stack={spoton.stack} name="SpotOn" />
             <div className="project-links">
-              <a className="text-link" href={spoton.demo}>
+              <a className="button button-outline" href={spoton.demo}>
                 Try the demo <Arrow />
               </a>
               <a className="text-link" href={spoton.github}>

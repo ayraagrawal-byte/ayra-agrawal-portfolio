@@ -412,7 +412,7 @@ section[id] {
 .trace-copy > p:not(.project-intro):not(.project-kind),
 .spoton-copy > p:not(.project-intro):not(.project-kind) {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
 }
 .stack {
   list-style: none;
@@ -421,7 +421,7 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   gap: 9px 13px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .stack li {
   display: flex;
@@ -458,9 +458,29 @@ section[id] {
   gap: 14px 23px;
 }
 .project-links .button {
-  font-size: 12px;
+  font-size: 14px;
   padding: 11px 17px;
   gap: 13px;
+  min-height: 44px;
+}
+.project-links .text-link {
+  min-height: 44px;
+}
+.button-apricot {
+  background: var(--apricot);
+  color: var(--on-color);
+  border: 1px solid transparent;
+}
+.button-apricot:hover {
+  color: var(--on-color);
+}
+.button-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.button-outline:hover {
+  color: var(--ink);
 }
 .recall-window {
   min-width: 0;
@@ -483,16 +503,9 @@ section[id] {
   transform: rotate(0);
 }
 .screenshot-frame figcaption {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   padding: 12px 4px;
-}
-.demo-link {
-  display: block;
-  text-align: right;
-  margin-top: 18px;
-  font-size: 12px;
-  text-decoration: underline;
 }
 .recall-foot {
   grid-column: 1/-1;
@@ -501,13 +514,13 @@ section[id] {
   gap: 32px;
   border-top: 1px solid var(--line);
   padding-top: 22px;
-  font-size: 12px;
+  font-size: 13px;
 }
 .recall-foot strong {
   font-weight: 600;
 }
 .project-caveat {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -540,7 +553,7 @@ section[id] {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 7px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 .system-steps {
@@ -573,7 +586,7 @@ section[id] {
   display: block;
 }
 .system-steps small {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   display: block;
   margin-top: 3px;
@@ -591,7 +604,7 @@ section[id] {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .system-steps li:nth-child(2)::after {
   content: "↙";
@@ -619,7 +632,7 @@ section[id] {
 }
 .benchmark-note p {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 .spoton-feature {
   display: grid;
@@ -663,7 +676,7 @@ section[id] {
   margin-top: 22px;
   border-top: 1px solid var(--line);
   padding-top: 12px;
-  font-size: 12px;
+  font-size: 13px;
 }
 summary {
   cursor: pointer;
@@ -847,7 +860,7 @@ summary {
   margin-block: 7px;
 }
 .date {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
 }
 .role {
@@ -895,7 +908,7 @@ summary {
 }
 .research-copy p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 18px;
 }
 .research-copy .large-copy {
@@ -907,7 +920,7 @@ summary {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .research-tags > span {
   background: var(--paper);
@@ -958,7 +971,7 @@ summary {
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   padding-block: 0 30px;
 }
@@ -1004,7 +1017,7 @@ summary {
 }
 .case-meta strong {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   font-weight: 500;
   margin-bottom: 8px;
@@ -1014,6 +1027,14 @@ summary {
   margin-right: 15px;
   padding-block: 5px;
   text-decoration: underline;
+}
+.case-meta a.button {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 10px 15px;
+  margin-top: 5px;
+  font-size: 13px;
+  text-decoration: none;
 }
 .case-layout {
   display: grid;
@@ -1056,7 +1077,7 @@ summary {
 }
 .case-body p,
 .case-body li {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
   margin-bottom: 16px;
   line-height: 1.9;
@@ -1112,7 +1133,7 @@ summary {
   border-radius: 12px;
 }
 .caption {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 12px;
 }
@@ -1374,7 +1395,7 @@ summary {
     margin-block: 22px;
   }
   .hero-school {
-    font-size: 12px;
+    font-size: 13px;
   }
   .hero-description {
     font-size: 13px;
@@ -1435,7 +1456,7 @@ summary {
   }
   .eyebrow,
   .project-kind {
-    font-size: 11px;
+    font-size: 12px;
   }
   .recall-feature {
     border-radius: 24px 24px 5px 24px;
@@ -1453,11 +1474,11 @@ summary {
   .recall-copy > p:not(.project-intro),
   .trace-copy > p:not(.project-intro):not(.project-kind),
   .spoton-copy > p:not(.project-intro):not(.project-kind) {
-    font-size: 13px;
+    font-size: 14px;
   }
   .stack {
     gap: 8px 12px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .recall-foot {
     grid-template-columns: 1fr;
@@ -1472,12 +1493,12 @@ summary {
     border-radius: 8px;
   }
   .screenshot-frame figcaption {
-    font-size: 10px;
+    font-size: 12px;
     padding: 9px 3px;
   }
   .trace-feature {
     padding-inline: 0;
-    margin-block: 50px;
+    margin-block: 36px;
   }
   .trace-notebook {
     padding: 23px 17px;
@@ -1504,7 +1525,7 @@ summary {
     font-size: 12px;
   }
   .system-steps small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .system-steps li:nth-child(1)::after,
   .system-steps li:nth-child(3)::after {
@@ -1517,7 +1538,7 @@ summary {
     font-size: 36px;
   }
   .benchmark-note p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .spoton-snapshot {
     padding: 12px 12px 0;
@@ -1539,7 +1560,7 @@ summary {
     margin-left: 39px;
   }
   .toolkit-section {
-    padding-block: 45px 15px;
+    padding-block: 32px 12px;
   }
   .toolkit-grid {
     gap: 26px 18px;
@@ -1557,8 +1578,8 @@ summary {
   }
   .about-section {
     grid-template-columns: 1fr;
-    padding-block: 55px;
-    gap: 35px;
+    padding-block: 40px;
+    gap: 28px;
   }
   .about-copy > p:not(.eyebrow) {
     font-size: 14px;
@@ -1569,7 +1590,7 @@ summary {
   .experience-section {
     grid-template-columns: 1fr;
     gap: 30px;
-    padding-block: 10px 55px;
+    padding-block: 8px 40px;
   }
   .experience-list {
     margin-left: 5px;
@@ -1583,7 +1604,7 @@ summary {
   }
   .research-section {
     border-radius: 40px 0 40px 0;
-    padding-block: 40px;
+    padding-block: 32px;
   }
   .research-grid {
     gap: 28px;
@@ -1595,10 +1616,10 @@ summary {
     font-size: 22px;
   }
   .research-copy p {
-    font-size: 13px;
+    font-size: 14px;
   }
   .contact-section {
-    margin-block: 50px 30px;
+    margin-block: 36px 24px;
     padding: 27px 23px;
     gap: 18px;
   }
@@ -1614,7 +1635,7 @@ summary {
   }
   .site-footer {
     gap: 10px 20px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .site-footer > span:nth-child(2) {
     order: 1;
@@ -1651,14 +1672,14 @@ summary {
     border-radius: 15px;
     padding: 10px;
     margin-bottom: 35px;
-    font-size: 11px;
+    font-size: 12px;
   }
   .case-body h2 {
     font-size: 29px;
   }
   .case-body p,
   .case-body li {
-    font-size: 13px;
+    font-size: 14px;
   }
   .resume-page {
     padding-block: 30px 50px;

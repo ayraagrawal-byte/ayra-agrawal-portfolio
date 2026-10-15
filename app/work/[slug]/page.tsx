@@ -65,7 +65,11 @@ export default async function CaseStudy({
           <div>
             <strong>Explore</strong>
             <a href={project.github}>Source ↗</a>
-            {project.demo ? <a href={project.demo}>Controlled demo ↗</a> : null}
+            {project.demo ? (
+              <a className="button button-apricot" href={project.demo}>
+                Controlled demo ↗
+              </a>
+            ) : null}
           </div>
         </div>
       </header>
