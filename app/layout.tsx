@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     "Rutgers CS and psychology student building backend systems, full-stack applications, and AI products. Selected work: TraceLab, Recall, and SpotOn.",
   openGraph: {
     title: "Ayra Agrawal — Software Engineer",
-    description: "Systems, software, and the people on the other side.",
+    description:
+      "Backend systems, full-stack applications, and AI tools with evidence.",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },

@@ -1,17 +1,23 @@
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
-import { links } from "@/lib/content";
+import { CommandMenu } from "./command-menu";
 export function Header() {
   return (
-    <header className="site-header shell">
+    <header className="site-header">
       <Link href="/" className="wordmark" aria-label="Ayra Agrawal home">
-        ayra agrawal<span aria-hidden="true">.</span>
+        <span className="brand-mark" aria-hidden="true">
+          a<span>.</span>
+        </span>
+        AYRA AGRAWAL
       </Link>
       <nav aria-label="Main navigation">
-        <Link href="/#work">Work</Link>
-        <Link href="/#experience">Experience</Link>
-        <Link href="/#about">About</Link>
-        <Link href="/#contact">Contact</Link>
+        <Link className="header-link" href="/#work">
+          Work
+        </Link>
+        <Link className="header-link" href="/resume">
+          Résumé
+        </Link>
+        <CommandMenu />
         <ThemeToggle />
       </nav>
     </header>
@@ -19,11 +25,11 @@ export function Header() {
 }
 export function Footer() {
   return (
-    <footer className="shell site-footer">
+    <footer className="site-footer shell">
       <span>© {new Date().getFullYear()} Ayra Agrawal</span>
-      <span>Built with intention. Still learning.</span>
-      <a href={links.github}>
-        Source & projects <span aria-hidden="true">↗</span>
+      <span>Always a work in progress.</span>
+      <a href="https://github.com/ayraagrawal-byte/ayra-agrawal-portfolio">
+        Source ↗
       </a>
     </footer>
   );

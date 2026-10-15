@@ -2,7 +2,7 @@
 
 **[Live portfolio](https://ayra-agrawal-portfolio.vercel.app/)**
 
-A custom editorial portfolio for Summer 2027 software engineering internship applications. Built with Next.js App Router, React, TypeScript, and Tailwind CSS. Static content and small client-side theme controls; no application backend, analytics, or contact-form service.
+A custom portfolio for Summer 2027 software engineering internship applications. The format uses a compact introduction, current status, an expandable experience timeline, project cards, and grouped skills, with original violet/mint styling and locally hosted JetBrains Mono typography. Built with Next.js App Router, React, TypeScript, and Tailwind CSS. Static content, a keyboard-accessible jump menu, and theme controls; no application backend, analytics, or contact-form service.
 
 ## Develop
 

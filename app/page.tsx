@@ -1,327 +1,442 @@
-import Link from "next/link";
 import Image from "next/image";
-import { Arrow } from "@/components/site-shell";
-import { SystemFigure } from "@/components/system-figure";
+import Link from "next/link";
 import { projects, experience, links } from "@/lib/content";
+import { SystemFigure } from "@/components/system-figure";
+import { PixelIcon } from "@/components/pixel-icon";
+import type { IconName } from "@/components/pixel-icon";
+const roleTools = [
+  ["React", "TypeScript", "Frontend"],
+  ["Supabase", "PostgreSQL", "Backend"],
+  ["R", "PsychoPy", "Tobii"],
+  ["React Native", "Expo", "Supabase"],
+];
+const skills = [
+  {
+    name: "Languages",
+    items: ["Python", "TypeScript", "JavaScript", "Java", "C", "SQL", "R"],
+  },
+  {
+    name: "Frontend & mobile",
+    items: ["React", "Next.js", "React Native", "Expo", "Tailwind CSS"],
+  },
+  {
+    name: "Backend & data",
+    items: [
+      "FastAPI",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "pgvector",
+      "Redis",
+      "Supabase",
+    ],
+  },
+  {
+    name: "AI & retrieval",
+    items: ["Ollama", "Sentence Transformers", "BM25", "MediaPipe", "Gemini"],
+  },
+  {
+    name: "Infrastructure & testing",
+    items: [
+      "Docker",
+      "AWS EC2",
+      "Vercel",
+      "Git",
+      "GitHub Actions",
+      "Pytest",
+      "Vitest",
+      "Playwright",
+    ],
+  },
+  {
+    name: "Research systems",
+    items: ["R pipelines", "PsychoPy", "Tobii Pro", "DeTox", "Data validation"],
+  },
+];
+function SectionTitle({
+  title,
+  icon,
+  description,
+  count,
+}: {
+  title: string;
+  icon: IconName;
+  description?: string;
+  count?: string;
+}) {
+  return (
+    <div className="section-title">
+      <div>
+        <h2
+          id={
+            title === "Experience"
+              ? "experience-title"
+              : title === "Selected projects"
+                ? "projects-title"
+                : undefined
+          }
+        >
+          <PixelIcon name={icon} />
+          {title}
+        </h2>
+        {description ? <p>{description}</p> : null}
+      </div>
+      {count ? <span className="section-count">{count}</span> : null}
+    </div>
+  );
+}
 export default function Home() {
   return (
-    <main id="main">
-      <section className="hero shell" aria-labelledby="hero-title">
-        <div className="hero-meta">
-          <span className="eyebrow">Software engineer · Rutgers ’29</span>
-          <span className="availability">
+    <main id="main" className="shell">
+      <section className="intro" aria-labelledby="intro-title">
+        <div className="intro-main">
+          <span className="eyebrow">
             <span className="status-dot" />
-            Seeking Summer 2027 internships
+            Software engineering / Rutgers ’29
           </span>
-        </div>
-        <h1 id="hero-title">
-          Systems, software,
-          <br />
-          and the <em>people</em>
-          <br />
-          on the other side.
-        </h1>
-        <div className="hero-bottom">
-          <p>
-            I’m Ayra, a CS and psychology student at Rutgers. I build backend
-            systems, full-stack applications, and AI products—and like
-            understanding what happens beneath the interface.
+          <h1 id="intro-title">
+            AYRA
+            <br />
+            <span>AGRAWAL</span>
+            <span className="title-dot">.</span>
+          </h1>
+          <p className="intro-description">
+            I build <strong>backend systems</strong>,
+            <br className="desktop-break" /> full-stack applications,
+            <br className="desktop-break" /> and{" "}
+            <strong>AI tools with evidence.</strong>
           </p>
-          <div className="hero-actions">
-            <a className="button" href="#work">
-              Explore my work <span aria-hidden="true">↓</span>
-            </a>
-            <a className="text-link" href={links.resume}>
-              View résumé <Arrow />
-            </a>
-          </div>
         </div>
-        <div className="hero-foot">
-          <span>New Brunswick, NJ</span>
-          <div>
+        <aside className="intro-status" aria-label="Current status">
+          <span className="eyebrow">A little context</span>
+          <p>
+            CS + psychology
+            <br />
+            at <strong>Rutgers.</strong>
+          </p>
+          <p className="status-copy">
+            Working on research software at CALC Lab and backend systems at
+            Hack4Impact.
+          </p>
+          <div className="looking">
+            <span className="status-dot" />
+            Seeking Summer 2027 SWE internships
+          </div>
+          <div className="intro-links">
             <a href={links.github}>
-              GitHub <Arrow />
+              <PixelIcon name="github" />
+              GitHub
             </a>
             <a href={links.linkedin}>
-              LinkedIn <Arrow />
+              <PixelIcon name="link" />
+              LinkedIn
             </a>
           </div>
-          <span className="scroll-note">A few things I’ve built ↓</span>
-        </div>
-      </section>
-      <section
-        id="work"
-        className="work-section shell"
-        aria-labelledby="work-title"
-      >
-        <div className="section-head">
-          <span className="eyebrow">01 / Selected work</span>
-          <h2 id="work-title">
-            From the request
-            <br />
-            to the <em>reason behind it.</em>
-          </h2>
-          <p>Three projects, three ways of thinking about a system.</p>
-        </div>
-        {projects.map((project) => (
-          <article
-            className={`project project-${project.slug}`}
-            key={project.slug}
-          >
-            <div className="project-copy">
-              <div className="project-kicker">
-                <span>{project.number}</span>
-                <span>{project.category}</span>
-              </div>
-              <h3>{project.name}</h3>
-              <h4>{project.title}</h4>
-              <p>{project.description}</p>
-              <ul className="stack" aria-label={`${project.name} technologies`}>
-                {project.stack.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-              <div className="project-links">
-                {project.slug !== "spoton" ? (
-                  <Link className="text-link" href={`/work/${project.slug}`}>
-                    Read the case study <Arrow />
-                  </Link>
-                ) : (
-                  <a className="text-link" href={project.demo}>
-                    Explore demo <Arrow />
-                  </a>
-                )}
-                <a href={project.github}>
-                  GitHub <Arrow />
-                </a>
-              </div>
-            </div>
-            <div className="project-visual">
-              {project.slug === "tracelab" ? (
-                <>
-                  <SystemFigure />
-                  <div className="metric-strip">
-                    <div>
-                      <strong>
-                        ~500<span>req/s</span>
-                      </strong>
-                      <small>steady-state ingestion</small>
-                    </div>
-                    <div>
-                      <strong>
-                        96<span>ms</span>
-                      </strong>
-                      <small>p95 API latency</small>
-                    </div>
-                    <div>
-                      <strong>100</strong>
-                      <small>concurrent clients</small>
-                    </div>
-                  </div>
-                  <p className="caption">
-                    Reported local Docker / Locust test. API enqueue
-                    performance, not database persistence throughput.
-                  </p>
-                </>
-              ) : project.slug === "recall" ? (
-                <>
-                  <figure className="screenshot-frame">
-                    <Image
-                      src="/recall-workspace.jpg"
-                      alt="Recall controlled demo showing a scripted answer and linked PDF source"
-                      width={1280}
-                      height={720}
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                    />
-                    <figcaption>
-                      Recall · public workspace demonstration
-                    </figcaption>
-                  </figure>
-                  <div className="evidence-note">
-                    <span className="eyebrow">Inspect the answer</span>
-                    <p>
-                      Question → passages → context → generation → evidence.
-                    </p>
-                    <a href={project.demo}>
-                      Open the controlled demo <Arrow />
-                    </a>
-                  </div>
-                  <p className="caption">
-                    Public demo uses curated content and recorded execution. The
-                    complete RAG backend runs locally.
-                  </p>
-                </>
-              ) : (
-                <>
-                  <figure className="screenshot-frame spoton-screenshot">
-                    <Image
-                      src="/spoton-home.jpg"
-                      alt="SpotOn public demo landing page with squat recording, replay, and comparison workflow"
-                      width={2560}
-                      height={1440}
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                    />
-                    <figcaption>SpotOn · collaborative project</figcaption>
-                  </figure>
-                  <p className="caption">
-                    Co-developed on a three-person team. Physical-camera
-                    accuracy and device acceptance remain unverified.
-                  </p>
-                </>
-              )}
-            </div>
-            <details className="project-detail">
-              <summary>
-                My contribution & engineering choices{" "}
-                <span aria-hidden="true">+</span>
-              </summary>
-              <div>
-                <p>
-                  <strong>My contribution.</strong> {project.role}
-                </p>
-                <p>
-                  <strong>Engineering choice.</strong> {project.decision}
-                </p>
-                {project.slug === "spoton" ? (
-                  <p>
-                    Repository owned by teammate shuknuk. Team capabilities are
-                    described collectively; individual ownership of every
-                    component is not implied.
-                  </p>
-                ) : null}
-              </div>
-            </details>
-          </article>
-        ))}
+          <a className="resume-inline" href={links.resume}>
+            View résumé <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
       </section>
       <section
         id="experience"
-        className="experience-section shell"
+        className="section"
         aria-labelledby="experience-title"
       >
-        <div className="section-head">
-          <span className="eyebrow">02 / Experience</span>
-          <h2 id="experience-title">
-            Useful work.
-            <br />
-            <em>Different contexts.</em>
-          </h2>
-        </div>
-        <div className="experience-list">
-          {experience.map((e) => (
-            <article key={e.org}>
-              <p className="date">{e.date}</p>
-              <div>
-                <h3>{e.org}</h3>
-                <p className="role">{e.role}</p>
-                <p>{e.text}</p>
+        <SectionTitle
+          title="Experience"
+          icon="work"
+          description="Different settings. The same curiosity about how things work."
+          count="04 ROLES"
+        />
+        <div className="timeline">
+          {experience.map((e, i) => (
+            <details className="role-row" key={e.org} open>
+              <summary>
+                <span className="timeline-node" aria-hidden="true" />
+                <span className="role-icon">
+                  <PixelIcon name={i === 2 ? "research" : "work"} />
+                </span>
+                <span className="role-summary">
+                  <strong>{e.role}</strong>
+                  <span className="role-org">{e.org}</span>
+                  <span className="role-description">{e.text}</span>
+                </span>
+                <span className="role-meta">
+                  <span>{e.date}</span>
+                  <small>
+                    {
+                      [
+                        "Frontend engineering",
+                        "Nonprofit technology",
+                        "Cognitive science",
+                        "Mobile development",
+                      ][i]
+                    }
+                  </small>
+                </span>
+                <span className="disclosure-arrow" aria-hidden="true">
+                  ⌃
+                </span>
+              </summary>
+              <div className="role-expanded">
+                <ul className="tags" aria-label={`${e.org} focus areas`}>
+                  {roleTools[i].map((t) => (
+                    <li key={t}>
+                      <span aria-hidden="true">·</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+                {i === 3 ? (
+                  <a
+                    className="inline-link"
+                    href="https://github.com/ayraagrawal-byte/rumad-incubator-2026"
+                  >
+                    RUThrift repository ↗
+                  </a>
+                ) : null}
               </div>
-            </article>
+            </details>
           ))}
         </div>
       </section>
-      <section id="research" className="research-section">
-        <div className="shell research-grid">
+      <section id="work" className="section" aria-labelledby="projects-title">
+        <SectionTitle
+          title="Selected projects"
+          icon="layers"
+          description="A closer look at the implementation—and the trade-offs."
+          count="04 PROJECTS"
+        />
+        <div className="project-grid">
+          {projects.map((p) => (
+            <article key={p.slug} className="project-card">
+              <div className={`card-preview preview-${p.slug}`}>
+                {p.slug === "tracelab" ? (
+                  <SystemFigure />
+                ) : (
+                  <Image
+                    src={
+                      p.slug === "recall"
+                        ? "/recall-workspace.jpg"
+                        : "/spoton-home.jpg"
+                    }
+                    width={p.slug === "recall" ? 1280 : 2560}
+                    height={p.slug === "recall" ? 720 : 1440}
+                    alt={
+                      p.slug === "recall"
+                        ? "Recall public controlled demo showing a source-linked answer"
+                        : "SpotOn collaborative project public demo homepage"
+                    }
+                    sizes="(max-width: 700px) 100vw, 50vw"
+                  />
+                )}
+                <span className="preview-label">
+                  {p.slug === "tracelab"
+                    ? "Architecture sketch"
+                    : "Authentic demo capture"}
+                </span>
+              </div>
+              <div className="card-content">
+                <span className="eyebrow">{p.category}</span>
+                <h3>
+                  {p.name}
+                  <a href={p.github} aria-label={`Open ${p.name} repository`}>
+                    <PixelIcon name="arrow" />
+                  </a>
+                </h3>
+                <p>{p.description}</p>
+                <ul className="tags">
+                  {p.stack.map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
+                </ul>
+                <div className="contribution">
+                  <strong>
+                    {p.slug === "spoton"
+                      ? "Team contribution"
+                      : "My contribution"}
+                  </strong>
+                  <p>{p.role}</p>
+                </div>
+                <p className="project-caveat">
+                  {p.slug === "tracelab"
+                    ? "Reported local test: ~500 req/s steady-state API enqueue, 96 ms p95, 100 clients. Not production persistence throughput."
+                    : p.slug === "recall"
+                      ? "Public demo: curated content and recorded execution. Full RAG backend runs locally."
+                      : "Three-person team; teammate-owned repository. Physical-camera accuracy and device acceptance remain unverified."}
+                </p>
+                <div className="card-actions">
+                  {p.slug !== "spoton" ? (
+                    <Link href={`/work/${p.slug}`}>
+                      <PixelIcon name="code" />
+                      Case study
+                    </Link>
+                  ) : null}
+                  {p.demo ? (
+                    <a href={p.demo}>
+                      Live demo <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
+                  <a href={p.github}>GitHub ↗</a>
+                </div>
+              </div>
+            </article>
+          ))}
+          <article className="project-card">
+            <div className="card-preview ruthrift-preview">
+              <div
+                className="market-diagram"
+                aria-label="RUThrift concept diagram, not an application screenshot"
+              >
+                <span className="market-school">
+                  RUTGERS / STUDENT MARKETPLACE
+                </span>
+                <strong>
+                  RU<span>Thrift</span>
+                </strong>
+                <div>
+                  <span>profiles</span>
+                  <span>auth</span>
+                  <span>listings</span>
+                </div>
+                <small>React Native → Express → Supabase</small>
+              </div>
+              <span className="preview-label">
+                Project concept / no verified screenshot
+              </span>
+            </div>
+            <div className="card-content">
+              <span className="eyebrow">
+                Mobile development · RUMAD Incubator
+              </span>
+              <h3>
+                RUThrift
+                <a
+                  href="https://github.com/ayraagrawal-byte/rumad-incubator-2026"
+                  aria-label="Open RUThrift repository"
+                >
+                  <PixelIcon name="arrow" />
+                </a>
+              </h3>
+              <p>
+                A Rutgers-exclusive marketplace developed through the Mobile App
+                Development Incubator on a four-person team.
+              </p>
+              <ul className="tags">
+                {["React Native", "Expo", "Supabase", "PostgreSQL"].map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+              <div className="contribution">
+                <strong>My contribution</strong>
+                <p>
+                  Authentication, profiles, and backend integration, including
+                  email verification flows.
+                </p>
+              </div>
+              <p className="project-caveat">
+                The public snapshot includes mock listing and chat flows; it
+                does not establish a complete persisted messaging backend.
+              </p>
+              <div className="card-actions">
+                <a href="https://github.com/ayraagrawal-byte/rumad-incubator-2026">
+                  Explore repository ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="research" className="section research-section">
+        <SectionTitle
+          title="Research"
+          icon="research"
+          description="Software that helps make a measurement trustworthy."
+        />
+        <div className="research-panel">
           <div>
-            <span className="eyebrow">03 / Research & engineering</span>
-            <h2>
-              Better questions.
+            <span className="eyebrow">
+              CALC Lab / Rutgers Center for Cognitive Science
+            </span>
+            <h3>
+              From behavioral data
               <br />
-              <em>More reliable data.</em>
-            </h2>
+              to a reliable pipeline.
+            </h3>
           </div>
           <div>
-            <p className="large-copy">
-              In cognitive science research, the details of the pipeline shape
-              what you can learn from the result.
-            </p>
             <p>
-              At Rutgers’ Cognition and Learning Center, I work on behavioral
-              data processing for infant cognition research. My R pipelines
-              extract measurement periods, frame onsets, and looking durations,
-              with automated validation to flag inconsistent coding files.
+              I build R pipelines that extract measurement periods, frame
+              onsets, and looking durations for infant cognition research, with
+              automated validation to flag inconsistent coding files.
             </p>
             <p>
               I also develop PsychoPy experiments and help configure, test, and
-              maintain Tobii eye-tracking systems. It’s engineering where
-              repeatability and careful measurement matter.
+              maintain Tobii eye-tracking systems. My interests connect
+              cognitive science, human-computer interaction, and software that
+              makes research more reproducible.
             </p>
-            <div className="research-tags">
-              <span>R automation & validation</span>
-              <span>Infant numerical cognition</span>
-              <span>PsychoPy & eye tracking</span>
-            </div>
+            <ul className="tags">
+              <li>Infant numerical cognition</li>
+              <li>R automation</li>
+              <li>Eye tracking</li>
+            </ul>
           </div>
         </div>
       </section>
-      <section
-        id="about"
-        className="about-section shell"
-        aria-labelledby="about-title"
-      >
-        <div>
-          <span className="eyebrow">04 / A little context</span>
-          <h2 id="about-title">
-            I like knowing
-            <br />
-            <em>why it works.</em>
-          </h2>
+      <section id="skills" className="section">
+        <SectionTitle
+          title="Technical toolkit"
+          icon="code"
+          description="The tools I use across projects, research, and coursework."
+        />
+        <div className="skill-grid">
+          {skills.map((group, i) => (
+            <div className={`skill-group group-${i}`} key={group.name}>
+              <h3>{group.name}</h3>
+              <ul>
+                {group.items.map((s) => (
+                  <li key={s}>
+                    <span className="skill-dot" aria-hidden="true" />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div className="about-copy">
+      </section>
+      <section id="about" className="section about-section">
+        <SectionTitle title="About me" icon="research" />
+        <div className="about-grid">
           <p>
             I’m studying computer science and psychology because I’m interested
-            in both the systems we build and the people who use them.
-          </p>
-          <p>
-            The projects that hold my attention usually have something difficult
-            underneath: a queue that changes what “success” means, a search
-            result that needs evidence, or a measurement that needs to be
-            trusted. I like working through those details, then making the
-            result easier to use.
+            in both the systems we build and the people who use them. I like
+            working through difficult details, understanding what a system
+            actually guarantees, and making the result easier to use.
           </p>
           <div className="education">
             <strong>Rutgers University–New Brunswick</strong>
             <span>B.S. Computer Science · B.A. Psychology</span>
             <span>Data Science minor · Expected May 2029</span>
           </div>
-          <p className="skills-line">
-            <strong>Working toolkit</strong>
-            <br />
-            Python, Java, C, TypeScript, SQL, R · React, Next.js, FastAPI ·
-            PostgreSQL, Redis, Supabase · Docker, Git, AWS EC2
-          </p>
         </div>
       </section>
-      <section
-        id="contact"
-        className="contact-section shell"
-        aria-labelledby="contact-title"
-      >
-        <span className="eyebrow">05 / Get in touch</span>
-        <h2 id="contact-title">
-          Let’s build something
-          <br />
-          <em>worth understanding.</em>
-        </h2>
-        <a className="contact-email" href={links.email}>
-          ayraagrawal@gmail.com <Arrow />
-        </a>
-        <div className="contact-bottom">
-          <p>
-            Open to software engineering internships
-            <br />
-            for Summer 2027.
-          </p>
+      <section id="contact" className="section contact-section">
+        <div>
+          <span className="eyebrow">Open to Summer 2027 opportunities</span>
+          <h2>Have something in mind?</h2>
+          <p>I’d like to hear about it.</p>
+        </div>
+        <div className="contact-links">
+          <a href={links.email}>
+            <PixelIcon name="mail" />
+            ayraagrawal@gmail.com
+            <PixelIcon name="arrow" />
+          </a>
           <div>
-            <a href={links.github}>
-              GitHub <Arrow />
-            </a>
-            <a href={links.linkedin}>
-              LinkedIn <Arrow />
-            </a>
-            <a href={links.resume}>
-              Résumé <Arrow />
-            </a>
+            <a href={links.github}>GitHub ↗</a>
+            <a href={links.linkedin}>LinkedIn ↗</a>
+            <a href={links.resume}>Résumé ↗</a>
           </div>
         </div>
       </section>
