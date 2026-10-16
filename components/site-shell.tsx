@@ -45,24 +45,6 @@ export function Arrow() {
     </svg>
   );
 }
-export function Star() {
-  return (
-    <svg
-      className="star"
-      aria-hidden="true"
-      width="1em"
-      height="1em"
-      viewBox="0 0 48 48"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="3.5"
-      strokeLinecap="round"
-    >
-      <path d="M24 5v38M7.5 14.5l33 19M7.5 33.5l33-19" />
-    </svg>
-  );
-}
-
 export function DownloadIcon() {
   return (
     <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">

@@ -24,7 +24,7 @@ export default function Image() {
           justifyContent: "space-between",
         }}
       >
-        <span>ayra agrawal ✳</span>
+        <span>ayra agrawal</span>
         <span style={{ fontSize: 20 }}>CS + Psychology @ Rutgers</span>
       </div>
       <div

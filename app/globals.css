@@ -128,22 +128,10 @@ section[id] {
   letter-spacing: -0.8px;
   white-space: nowrap;
 }
-.star {
-  display: inline-block;
-  color: var(--accent-text);
-  font-family: var(--sans);
-  font-weight: 400;
-  vertical-align: -0.08em;
-}
 .arrow-icon {
   display: inline-block;
   flex-shrink: 0;
   vertical-align: -0.1em;
-}
-.wordmark .star {
-  font-size: 22px;
-  margin-left: 4px;
-  color: var(--muted);
 }
 .site-header nav {
   display: flex;
@@ -208,12 +196,6 @@ section[id] {
   letter-spacing: -3.5px;
   line-height: 1.08;
   white-space: nowrap;
-}
-.hero h1 .star {
-  color: var(--accent-text);
-  font-size: 0.68em;
-  transform: rotate(-13deg);
-  margin-left: 2px;
 }
 .hero-thought {
   font-family: var(--serif);
@@ -362,10 +344,6 @@ section[id] {
   line-height: 1.15;
   letter-spacing: -1.8px;
   margin-block: 9px 17px;
-}
-.recall-copy h3 > .star {
-  font: 32px var(--sans);
-  color: var(--muted);
 }
 .project-intro {
   font-family: var(--serif);
@@ -824,9 +802,6 @@ summary {
 .contact-section h2 {
   margin-block: 14px 22px;
 }
-.contact-section h2 .star {
-  font-size: 40px;
-}
 .contact-section p:not(.eyebrow) {
   font-size: 13px;
   color: var(--muted);
@@ -1197,9 +1172,6 @@ summary {
   }
   .wordmark {
     font-size: 20px;
-  }
-  .wordmark .star {
-    display: none;
   }
   .site-header nav {
     gap: 3px;

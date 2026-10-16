@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { TechLogo, TechStack } from "@/components/tech-stack";
-import { Arrow, Star, SocialIcon, DownloadIcon } from "@/components/site-shell";
+import { Arrow, SocialIcon, DownloadIcon } from "@/components/site-shell";
 import { TraceArchitecture } from "@/components/system-figure";
 import { projects, experience, links, currently } from "@/lib/content";
 
@@ -34,7 +34,7 @@ export default function Home() {
             Software engineer · Rutgers student
           </p>
           <h1 id="hero-title">
-            hi, i’m ayra <Star />
+            hi, i’m ayra
           </h1>
           <p className="hero-thought">
             I build things, ask lots of questions, and love figuring out{" "}
