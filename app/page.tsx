@@ -31,19 +31,19 @@ export default function Home() {
       <section className="hero shell" aria-labelledby="hero-title">
         <div className="hero-intro">
           <p className="hello-note">
-            Welcome to my little corner of the internet
+            Software engineer · Rutgers student
           </p>
           <h1 id="hero-title">
             hi, i’m ayra <Star />
           </h1>
           <p className="hero-thought">
-            i build things, ask lots of questions, and love figuring out{" "}
+            I build things, ask lots of questions, and love figuring out{" "}
             <em>how they work.</em>
           </p>
           <p className="hero-school">CS + Psychology @ Rutgers University</p>
           <p className="hero-description">
-            Usually somewhere between backend systems, AI, full-stack
-            development, and a question about human behavior.
+            I work on backend systems, full-stack applications, AI tools,
+            and cognitive science research.
           </p>
           <div className="hero-actions">
             <a className="button" href="#work">
@@ -68,15 +68,12 @@ export default function Home() {
         </div>
         <aside className="hero-note" aria-label="A little life update">
           <span className="note-tape" aria-hidden="true" />
-          <span className="note-asterisk" aria-hidden="true">
-            <Star />
-          </span>
           <p className="note-heading">currently…</p>
           <p>{currently[0].text}</p>
           <a className="text-link" href="#about">
             A little more about me <Arrow />
           </a>
-          <div className="note-foot">curiosity is a good place to start.</div>
+          <div className="note-foot">Also learning at Blueprint and CALC Lab.</div>
         </aside>
       </section>
 
@@ -93,22 +90,20 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            A few questions I followed
-            <br className="desktop-break" /> far enough to build something.
+            Selected projects in AI, backend systems,
+            <br className="desktop-break" /> and computer vision.
           </p>
         </div>
         <article className="recall-feature" aria-labelledby="recall-title">
           <div className="recall-copy">
-            <span className="project-kind">Full-stack + AI</span>
-            <h3 id="recall-title">
-              Recall <Star />
-            </h3>
+            <span className="project-kind">Full-stack AI research workspace</span>
+            <h3 id="recall-title">Recall</h3>
             <p className="project-intro">
-              An answer is more useful when you can see where it came from.
+              Ask questions about research PDFs.
             </p>
             <p>
-              I built a research workspace that brings PDF reading, hybrid
-              retrieval, and source-linked answers together.
+              I built a workspace that combines hybrid retrieval with a locally
+              running LLM to answer questions with source-linked citations.
             </p>
             <ProjectStack stack={recall.stack} name="Recall" />
             <div className="project-links">
@@ -145,8 +140,8 @@ export default function Home() {
           </div>
           <div className="recall-foot">
             <p>
-              <strong>My favorite part:</strong> Inside Recall lets you follow a
-              recorded execution from question to evidence.
+              <strong>Retrieval choice:</strong> Combine keyword and vector
+              search, then rerank the results before generating an answer.
             </p>
             <p className="project-caveat">
               Public demo available · Full AI pipeline runs locally.
@@ -155,14 +150,15 @@ export default function Home() {
         </article>
         <article className="trace-feature" aria-labelledby="trace-title">
           <div className="trace-copy">
-            <p className="project-kind">Backend + infrastructure</p>
+            <p className="project-kind">Distributed tracing & observability backend</p>
             <h3 id="trace-title">TraceLab</h3>
             <p className="project-intro">
-              What happens after an API says “accepted”?
+              Trace ingestion, processing, and storage.
             </p>
             <p>
-              I built a tracing backend to explore that handoff: take in a
-              request, queue it, persist it, and measure each step.
+              FastAPI queues traces in Redis; a background worker writes them
+              to PostgreSQL. Docker, AWS EC2 deployment, metrics, and load
+              testing are part of the project.
             </p>
             <ProjectStack stack={trace.stack} name="TraceLab" />
             <div className="project-links">
@@ -179,7 +175,7 @@ export default function Home() {
             </div>
           </div>
           <div className="trace-notebook">
-            <span className="margin-note">a request’s little journey</span>
+            <span className="margin-note">How TraceLab works</span>
             <SystemFigure />
             <div className="benchmark-note">
               <strong>
@@ -192,15 +188,15 @@ export default function Home() {
               </p>
             </div>
             <p className="project-caveat">
-              The interesting distinction: a fast enqueue is only one part of
-              reliable processing.
+              API enqueue latency and background PostgreSQL persistence are
+              measured separately.
             </p>
           </div>
         </article>
         <article className="spoton-feature" aria-labelledby="spoton-title">
           <figure className="spoton-snapshot screenshot-frame">
             <span className="snapshot-label">
-              a HackRU weekend, three teammates
+              HackRU · Built with two teammates
             </span>
             <Image
               src="/spoton-home.jpg"
@@ -209,21 +205,16 @@ export default function Home() {
               height={1440}
               sizes="(max-width: 800px) 90vw, 45vw"
             />
-            <figcaption>The actual SpotOn application</figcaption>
+            <figcaption>SpotOn · Recording, replay, and comparison</figcaption>
           </figure>
           <div className="spoton-copy">
-            <p className="project-kind">Computer vision + collaboration</p>
-            <h3 id="spoton-title">
-              SpotOn{" "}
-              <span className="motion-mark" aria-hidden="true">
-                ↝
-              </span>
-            </h3>
-            <p className="project-intro">A closer look at how we move.</p>
+            <p className="project-kind">Computer vision fitness analyzer</p>
+            <h3 id="spoton-title">SpotOn</h3>
+            <p className="project-intro">Track and replay a squat workout.</p>
             <p>
-              My teammates and I built browser-based squat analysis at HackRU:
-              pose landmarks, joint angles, skeleton replay, and attempt
-              comparison.
+              Built at HackRU with two teammates: browser-based pose tracking,
+              squat analysis, and workout replay. Full pose recordings stay
+              in IndexedDB; cloud features are optional.
             </p>
             <ProjectStack stack={spoton.stack} name="SpotOn" />
             <div className="project-links">
@@ -272,19 +263,15 @@ export default function Home() {
       >
         <div className="about-copy">
           <p className="eyebrow">The person behind the projects</p>
-          <h2 id="about-title">
-            I tend to ask
-            <br />
-            <em>“but why?”</em>
-          </h2>
+          <h2 id="about-title">A little about me.</h2>
           <p>
-            That’s part of why I study computer science and psychology. I like
-            understanding the systems we build and the people who use them.
+            I study Computer Science and Psychology at Rutgers. I like
+            understanding why systems work the way they do, whether I’m
+            working on a backend or analyzing cognitive science data.
           </p>
           <p>
-            A queue, a research question, an unexpected result—I enjoy pulling
-            at the thread, working through the details, and making what I learn
-            useful.
+            I learn new technologies by building with them. Figuring out a
+            difficult problem is usually the part that keeps me interested.
           </p>
           <div className="education">
             <strong>Rutgers University–New Brunswick</strong>
@@ -309,19 +296,13 @@ export default function Home() {
         aria-labelledby="experience-title"
       >
         <div className="experience-heading">
-          <p className="eyebrow">Learning by doing</p>
-          <h2 id="experience-title">
-            A few places
-            <br />
-            I’m <em>growing.</em>
-          </h2>
+          <p className="eyebrow">Teams & roles</p>
+          <h2 id="experience-title">Experience.</h2>
           <p>
-            Different teams, different problems,
-            <br />
-            plenty to figure out.
+            Software development and research at Rutgers.
           </p>
           <Link className="text-link" href={links.resume}>
-            The résumé version <Arrow />
+            View résumé <Arrow />
           </Link>
         </div>
         <div className="experience-list">
@@ -343,13 +324,9 @@ export default function Home() {
       >
         <div className="shell research-grid">
           <div className="research-title">
-            <span className="research-doodle" aria-hidden="true">
-              ?
-            </span>
-            <p className="eyebrow">A different kind of debugging</p>
+            <p className="eyebrow">Cognitive science</p>
             <h2 id="research-title">
-              Questions, experiments
-              <br />& a lot of <em>R.</em>
+              Research at CALC Lab.
             </h2>
             <p>CALC Lab · Rutgers Center for Cognitive Science</p>
           </div>
@@ -361,13 +338,12 @@ export default function Home() {
             <p>
               I work on R pipelines that extract measurement periods, frame
               onsets, and looking durations from behavioral coding files.
-              Automated validation helps flag inconsistencies before they travel
-              further.
+              Automated validation flags inconsistencies before analysis.
             </p>
             <p>
               I also develop PsychoPy experiments and help configure, test, and
-              maintain Tobii eye-tracking systems. It’s taught me to pay
-              attention to how a measurement was made.
+              maintain Tobii eye-tracking systems. That work involves checking
+              how measurements are collected as well as how they’re processed.
             </p>
             <div className="research-tags">
               <span>R + validation</span>
@@ -388,7 +364,7 @@ export default function Home() {
           <h2 id="contact-title">
             Have something
             <br />
-            <em>in mind?</em> <Star />
+            <em>in mind?</em>
           </h2>
           <p>
             I’m looking for Summer 2027 SWE internships.

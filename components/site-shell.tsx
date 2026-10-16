@@ -21,7 +21,7 @@ export function Footer() {
     <footer className="shell site-footer">
       <span>© {new Date().getFullYear()} Ayra Agrawal</span>
       <span>
-        Thanks for stopping by. <Star />
+        Thanks for stopping by.
       </span>
       <a href={links.github}>
         GitHub <span aria-hidden="true">↗</span>

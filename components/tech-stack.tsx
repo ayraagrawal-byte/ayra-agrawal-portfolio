@@ -93,7 +93,7 @@ export function TechStack() {
         <div>
           <p className="eyebrow">My toolkit</p>
           <h2 id="toolkit-title">
-            Things I reach <em>for.</em>
+            Technologies I use.
           </h2>
         </div>
         <p>Tools from projects, research, and coursework.</p>
