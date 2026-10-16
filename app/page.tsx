@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { TechLogo, TechStack } from "@/components/tech-stack";
-import { Arrow, Star } from "@/components/site-shell";
-import { SystemFigure } from "@/components/system-figure";
+import { Arrow, Star, SocialIcon, DownloadIcon } from "@/components/site-shell";
+import { TraceArchitecture } from "@/components/system-figure";
 import { projects, experience, links, currently } from "@/lib/content";
 
 function ProjectStack({
@@ -47,18 +47,21 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button" href="#work">
-              Things I’ve built <span aria-hidden="true">↓</span>
+              View projects <span aria-hidden="true">↓</span>
             </a>
-            <Link className="text-link" href={links.resume}>
-              My résumé <Arrow />
+            <a className="button button-outline" href="/Ayra-Agrawal-Resume.pdf" download>
+              Download résumé <DownloadIcon />
+            </a>
+            <Link className="text-link resume-page-link" href={links.resume}>
+              View résumé online <Arrow />
             </Link>
           </div>
           <div className="hero-social">
-            <a href={links.github}>
-              GitHub <Arrow />
+            <a className="external-link" href={links.github}>
+              <SocialIcon name="github" /> GitHub <Arrow />
             </a>
-            <a href={links.linkedin}>
-              LinkedIn <Arrow />
+            <a className="external-link" href={links.linkedin}>
+              <SocialIcon name="linkedin" /> LinkedIn <Arrow />
             </a>
             <span className="availability">
               <span className="status-dot" /> Seeking Summer 2027 SWE
@@ -67,7 +70,6 @@ export default function Home() {
           </div>
         </div>
         <aside className="hero-note" aria-label="A little life update">
-          <span className="note-tape" aria-hidden="true" />
           <p className="note-heading">currently…</p>
           <p>{currently[0].text}</p>
           <a className="text-link" href="#about">
@@ -102,29 +104,30 @@ export default function Home() {
               Ask questions about research PDFs.
             </p>
             <p>
-              I built a workspace that combines hybrid retrieval with a locally
-              running LLM to answer questions with source-linked citations.
+              I built a workspace that combines keyword and vector search,
+              reranking, and a local LLM to answer questions with source-linked citations.
             </p>
             <ProjectStack stack={recall.stack} name="Recall" />
             <div className="project-links">
               <a
-                className="button button-apricot"
+                className="button"
                 href={recall.demo}
                 aria-label="View Recall controlled demo"
               >
                 View demo <Arrow />
               </a>
               <Link
-                className="button button-outline"
+                className="text-link"
                 href="/work/recall#main"
                 aria-label="Read Recall case study"
               >
                 Read case study <Arrow />
               </Link>
-              <a className="text-link" href={recall.github}>
-                GitHub <Arrow />
+              <a className="text-link external-link" href={recall.github}>
+                <SocialIcon name="github" /> GitHub <Arrow />
               </a>
             </div>
+            <p className="project-note">Scripted public demo · AI pipeline runs locally.</p>
           </div>
           <div className="recall-window">
             <figure className="screenshot-frame">
@@ -137,15 +140,6 @@ export default function Home() {
               />
               <figcaption>A look inside the public controlled demo</figcaption>
             </figure>
-          </div>
-          <div className="recall-foot">
-            <p>
-              <strong>Retrieval choice:</strong> Combine keyword and vector
-              search, then rerank the results before generating an answer.
-            </p>
-            <p className="project-caveat">
-              Public demo available · Full AI pipeline runs locally.
-            </p>
           </div>
         </article>
         <article className="trace-feature" aria-labelledby="trace-title">
@@ -169,28 +163,13 @@ export default function Home() {
               >
                 Read case study <Arrow />
               </Link>
-              <a className="text-link" href={trace.github}>
-                GitHub <Arrow />
+              <a className="text-link external-link" href={trace.github}>
+                <SocialIcon name="github" /> GitHub <Arrow />
               </a>
             </div>
           </div>
           <div className="trace-notebook">
-            <span className="margin-note">How TraceLab works</span>
-            <SystemFigure />
-            <div className="benchmark-note">
-              <strong>
-                ~500 <span>requests/sec</span>
-              </strong>
-              <p>
-                Reported local API ingestion / enqueue performance.
-                <br />
-                100 clients · 96 ms p95 · not production throughput.
-              </p>
-            </div>
-            <p className="project-caveat">
-              API enqueue latency and background PostgreSQL persistence are
-              measured separately.
-            </p>
+            <TraceArchitecture />
           </div>
         </article>
         <article className="spoton-feature" aria-labelledby="spoton-title">
@@ -218,11 +197,11 @@ export default function Home() {
             </p>
             <ProjectStack stack={spoton.stack} name="SpotOn" />
             <div className="project-links">
-              <a className="button button-outline" href={spoton.demo}>
+              <a className="button" href={spoton.demo}>
                 Try the demo <Arrow />
               </a>
-              <a className="text-link" href={spoton.github}>
-                Team GitHub <Arrow />
+              <a className="text-link external-link" href={spoton.github}>
+                <SocialIcon name="github" /> GitHub <Arrow />
               </a>
             </div>
             <details className="project-detail">
@@ -232,11 +211,7 @@ export default function Home() {
               <p>
                 {spoton.role} {spoton.decision}
               </p>
-              <p className="project-caveat">
-                Three-person collaboration; repository owned by teammate
-                shuknuk. Physical-camera accuracy and device acceptance remain
-                unverified.
-              </p>
+              <p>Three-person collaboration; team repository owned by shuknuk.</p>
             </details>
           </div>
         </article>
@@ -377,11 +352,11 @@ export default function Home() {
             ayraagrawal@gmail.com <Arrow />
           </a>
           <div>
-            <a href={links.github}>
-              GitHub <Arrow />
+            <a className="external-link" href={links.github}>
+              <SocialIcon name="github" /> GitHub <Arrow />
             </a>
-            <a href={links.linkedin}>
-              LinkedIn <Arrow />
+            <a className="external-link" href={links.linkedin}>
+              <SocialIcon name="linkedin" /> LinkedIn <Arrow />
             </a>
             <Link href={links.resume}>
               Résumé <Arrow />

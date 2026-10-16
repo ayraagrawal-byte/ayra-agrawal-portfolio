@@ -49,3 +49,30 @@ export function SystemFigure({
     </figure>
   );
 }
+
+export function TraceArchitecture() {
+  const steps = [
+    { name: "FastAPI", detail: "Accept the trace request", phase: "Request path" },
+    { name: "Redis queue", detail: "Queue the trace payload", phase: null },
+    { name: "Worker", detail: "Consume the queued trace", phase: "Background processing" },
+    { name: "PostgreSQL", detail: "Write the trace to the database", phase: null },
+  ];
+  return (
+    <figure className="trace-architecture" aria-labelledby="trace-architecture-title">
+      <figcaption id="trace-architecture-title">How TraceLab works</figcaption>
+      <ol>
+        {steps.map((step, index) => (
+          <li key={step.name}>
+            {step.phase ? <span className="trace-phase">{step.phase}</span> : null}
+            <div className="trace-step">
+              <span className="trace-index" aria-hidden="true">0{index + 1}</span>
+              <strong>{step.name}</strong>
+              <span>{step.detail}</span>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p>API responds 202 after enqueue.</p>
+    </figure>
+  );
+}
