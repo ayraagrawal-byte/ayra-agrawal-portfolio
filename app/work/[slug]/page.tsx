@@ -263,8 +263,8 @@ export default async function CaseStudy({
           <section id="source">
             <h2>Inspect the implementation.</h2>
             <p>
-              Claims in this case study were cross-checked against the resume
-              and repository source on October 15, 2026. Repository
+              Claims in this case study were cross-checked against the résumé
+              and repository source on October 16, 2026. Repository
               documentation reports benchmark and deployment history; source
               inspection establishes the implementation choices described above.
             </p>
@@ -300,13 +300,13 @@ export default async function CaseStudy({
                     </a>
                   </li>
                   <li>
-                    <a href={`${project.github}/blob/main/backend/app/rag.py`}>
+                    <a href={`${project.github}/blob/recall-2.0/backend/app/rag.py`}>
                       Generation prompting, streaming, and citations
                     </a>
                   </li>
                   <li>
                     <a
-                      href={`${project.github}/blob/main/backend/app/hybrid_retrieval.py`}
+                      href={`${project.github}/blob/recall-2.0/backend/app/hybrid_retrieval.py`}
                     >
                       Hybrid retrieval implementation
                     </a>

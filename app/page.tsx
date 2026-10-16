@@ -279,6 +279,9 @@ export default function Home() {
           <Link className="text-link" href={links.resume}>
             View résumé <Arrow />
           </Link>
+          <Link className="text-link" href="/experience">
+            Explore all experience <Arrow />
+          </Link>
         </div>
         <div className="experience-list">
           {experience.map((e) => (
@@ -326,6 +329,9 @@ export default function Home() {
               <span>Eye tracking</span>
               <span>Infant numerical cognition</span>
             </div>
+            <Link className="button button-apricot" href="/research/calc-lab">
+              Read the research case study <Arrow />
+            </Link>
           </div>
         </div>
       </section>

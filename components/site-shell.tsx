@@ -9,7 +9,10 @@ export function Header() {
       </Link>
       <nav aria-label="Main navigation">
         <Link href="/#work">Projects</Link>
+        <Link href="/experience">Experience</Link>
+        <Link href="/research/calc-lab">Research</Link>
         <Link href="/#about">About</Link>
+        <Link href={links.resume}>Résumé</Link>
         <Link href="/#contact">Contact</Link>
         <ThemeToggle />
       </nav>

@@ -72,27 +72,93 @@ export const currently = [
 ] as const;
 export const experience = [
   {
+    slug: "blueprint",
     org: "Rutgers Blueprint",
     role: "Frontend Software Engineering Fellow",
     date: "Oct 2026 — Present",
-    text: "Developing my frontend engineering practice through the Rutgers Blueprint fellowship.",
+    text: "Expanding my frontend engineering practice through Blueprint’s structured eight-week fellowship.",
+    context: "An eight-week frontend software engineering fellowship covering the path from responsive web foundations to typed React applications.",
+    contributions: [
+      "Building on my backend experience through guided work in HTML, CSS, responsive design, JavaScript, and browser interactivity.",
+      "Following a curriculum that progresses into TypeScript, typed API interactions, React components, hooks, state, and routing.",
+    ],
+    methods: ["React", "TypeScript", "HTML", "CSS"],
+    status: "Eight-week fellowship in progress",
+    links: [],
+    details: [
+      {
+        title: "Curriculum status",
+        text: "The October 8 and October 15 sessions were scheduled for HTML/CSS foundations, responsive design, JavaScript, DOM interaction, and events. The remaining topics are upcoming in the published syllabus, so they are described as planned learning rather than completed work.",
+      },
+      {
+        title: "What comes next",
+        text: "Scheduled sessions cover TypeScript and typed JSON/API work, React and reusable components, hooks and state management, routing, deployment fundamentals, and a collaborative final project with three or four fellows. The syllabus plans a December presentation; no finished application or certificate is claimed.",
+      },
+    ],
   },
   {
+    slug: "hack4impact",
     org: "Hack4Impact · Rutgers",
     role: "Backend Developer",
     date: "Sep 2026 — Present",
-    text: "Building Supabase backend systems and role-based functionality for Love Blue Inc.’s beach-cleanup tracking application.",
+    text: "Owning authentication and profile creation for Love Blue Inc.’s volunteer platform.",
+    context: "Love Blue is developing one platform for volunteers, chapter leaders, and national administrators to coordinate cleanups and document environmental impact.",
+    contributions: [
+      "Own the current authentication work, including Supabase sign-in providers and user-profile creation on signup.",
+      "Use role-aware identity as the foundation for deciding what volunteers, chapter leaders, and national administrators can access.",
+      "Ship changes through reviewed pull requests; no planned feature is presented here as complete without implementation evidence.",
+    ],
+    methods: ["Supabase Auth", "Supabase", "Authentication", "Pull requests"],
+    status: "MVP in development · target Dec 22, 2026",
+    links: [],
+    details: [
+      {
+        title: "Product direction and approved MVP",
+        text: "The product vision is a central home for people, chapters, events, participation, hours, and impact. The approved MVP narrows that direction to accounts and profiles; chapter creation, approval, and administration; event discovery and registration; cleanup check-in and check-out; volunteer hours and trash reporting; leaderboards; and leader and national administration tools.",
+      },
+      {
+        title: "My verified scope",
+        text: "My independently supported work is authentication, Supabase sign-in providers, and profile creation on signup. These identity flows matter because one account can participate as a volunteer while permissions determine who may manage a chapter or the national network. The broader backend plan is team scope, not individual attribution.",
+      },
+      {
+        title: "Planned and outside the MVP",
+        text: "The six-sprint plan targets a working MVP by December 22, 2026. Later sprints schedule chapters, events, attendance, impact totals, leaderboards, administration, testing, and permissions review. AI trash scanning, push notifications, the activity feed, interactive map, achievements, advanced analytics and exports, and other expansion ideas are explicitly deferred beyond the MVP.",
+      },
+    ],
   },
   {
+    slug: "calc-lab",
     org: "CALC Lab · Rutgers Center for Cognitive Science",
     role: "Undergraduate Research Assistant & IT Team Member",
     date: "May 2026 — Present",
     text: "Engineering R data-processing and validation pipelines, developing PsychoPy experiments, and supporting eye-tracking systems.",
+    context: "Engineering support for developmental and numerical-cognition research at the Cognition and Learning Center.",
+    contributions: [
+      "Built and refined R workflows that extract measurement periods, frame onsets, looking durations, and looking-away measurements from behavioral coding exports.",
+      "Added validation checks that surface timing and coding inconsistencies across 227+ coding files (approximately 300 datasets).",
+      "Configured and tested Tobii eye-tracking systems with DeTox, developed PsychoPy experiments, and supported behavioral coding in Datavyu.",
+      "Building EyeSpy, an ongoing number-word study; no unpublished findings or participant data are presented here.",
+    ],
+    methods: ["R", "PsychoPy", "Tobii Pro", "DeTox", "Datavyu"],
+    status: "Current role; EyeSpy is ongoing",
+    links: [{ label: "Research case study", href: "/research/calc-lab" }],
+    details: [],
   },
   {
+    slug: "rumad",
     org: "Rutgers Mobile App Development Incubator",
     role: "Backend Developer",
     date: "Feb — May 2026",
     text: "Worked on authentication, profiles, and backend integration for RUThrift, a Rutgers marketplace built by a four-person team.",
+    context: "RUThrift is a team-built Rutgers marketplace developed through the RUMAD Incubator.",
+    contributions: [
+      "Worked on Supabase-backed profile upsert and email OTP request and verification routes.",
+      "Contributed to onboarding and frontend/backend integration in a React Native and Expo application.",
+      "Presented the team project at the RUMAD showcase; the repository snapshot still uses mock data for parts of listings and messaging.",
+    ],
+    methods: ["TypeScript", "Express", "Supabase", "React Native", "Expo"],
+    status: "Incubator completed; repository is a project snapshot",
+    links: [{ label: "Team repository", href: "https://github.com/ayraagrawal-byte/rumad-incubator-2026" }],
+    details: [],
   },
-];
+] as const;
