@@ -4,8 +4,6 @@
 
 A personal corner of the internet connecting backend systems, AI, and cognitive-science research. Warm ivory, lilac, apricot, Fraunces headings, and DM Sans body text; a complementary deep-plum dark theme. Built with Next.js, React, TypeScript, and Tailwind CSS; no application backend or analytics service.
 
-The Lilac & Apricot redesign is on the local `redesign/lilac-apricot` branch for review. Do not deploy or publish before final approval.
-
 ## Develop
 
 Use Node.js 22 or 24 and npm.

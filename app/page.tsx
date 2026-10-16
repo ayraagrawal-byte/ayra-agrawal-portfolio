@@ -149,8 +149,7 @@ export default function Home() {
               recorded execution from question to evidence.
             </p>
             <p className="project-caveat">
-              Public demo: curated content + recorded execution. Full RAG
-              backend: runs locally.
+              Public demo available · Full AI pipeline runs locally.
             </p>
           </div>
         </article>
