@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s · Ayra Agrawal",
   },
   description:
-    "Rutgers CS and psychology student building backend systems, full-stack applications, and AI products. Selected work: TraceLab, Recall, and SpotOn.",
+    "Rutgers CS and psychology student building backend systems, full-stack applications, and AI products. Selected work: PhantomCare, TraceLab, Recall, and SpotOn.",
   openGraph: {
     title: "Ayra Agrawal — Software Engineer",
     description:

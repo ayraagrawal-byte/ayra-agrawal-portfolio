@@ -38,7 +38,7 @@ export default function ExperiencePage() {
             </ul>
             {item.details.length ? (
               <details className="experience-more">
-                <summary>Scope, curriculum & status <span aria-hidden="true">+</span></summary>
+                <summary>Scope & status <span aria-hidden="true">+</span></summary>
                 <div className="experience-more-grid">
                   {item.details.map((detail) => (
                     <section key={detail.title}>

@@ -25,7 +25,7 @@ function ProjectStack({
 }
 
 export default function Home() {
-  const [trace, recall, spoton] = projects;
+  const [phantom, trace, recall, spoton] = projects;
   return (
     <main id="main">
       <section className="hero shell" aria-labelledby="hero-title">
@@ -75,7 +75,7 @@ export default function Home() {
           <a className="text-link" href="#about">
             A little more about me <Arrow />
           </a>
-          <div className="note-foot">Also learning at Blueprint and CALC Lab.</div>
+          <div className="note-foot">Also researching at CALC Lab.</div>
         </aside>
       </section>
 
@@ -92,10 +92,94 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Selected projects in AI, backend systems,
-            <br className="desktop-break" /> and computer vision.
+            Selected projects in backend systems, data,
+            <br className="desktop-break" /> AI, and computer vision.
           </p>
         </div>
+        <article className="recall-feature" aria-labelledby="phantomcare-title">
+          <div className="recall-copy">
+            <span className="project-kind">
+              Healthcare data intelligence · HackPrinceton Fall 2026
+            </span>
+            <h3 id="phantomcare-title">PhantomCare</h3>
+            <p className="project-intro">
+              Find hospice registrations worth a closer look.
+            </p>
+            <p>
+              With two teammates, I built a platform that groups 569 LA County
+              hospice registrations into 468 buildings, scores each one with
+              versioned rules, and maps a ranked queue for human review.
+            </p>
+            <ProjectStack stack={phantom.stack} name="PhantomCare" />
+            <div className="project-links">
+              <a
+                className="button"
+                href={phantom.demo}
+                aria-label="View PhantomCare live demo"
+              >
+                View demo <Arrow />
+              </a>
+              <a className="text-link external-link" href={phantom.devpost}>
+                Devpost <Arrow />
+              </a>
+              <a className="text-link external-link" href={phantom.github}>
+                <SocialIcon name="github" /> GitHub <Arrow />
+              </a>
+            </div>
+            <details className="project-detail">
+              <summary>
+                What I worked on <span aria-hidden="true">+</span>
+              </summary>
+              <p>{phantom.role}</p>
+              <p>{phantom.decision}</p>
+            </details>
+            <p className="project-note">
+              A screening aid, not a fraud finding · demo runs without live AI.
+            </p>
+          </div>
+          <div className="recall-window">
+            <figure className="screenshot-frame">
+              <Image
+                src="/phantomcare-dashboard.jpg"
+                alt="PhantomCare dashboard with a case queue of 468 buildings grouped by score beside a hotspot map of Los Angeles County"
+                width={2560}
+                height={1440}
+                sizes="(max-width: 800px) 92vw, 58vw"
+              />
+              <figcaption>Case queue, hotspot map, and geocoding coverage</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article className="trace-feature" aria-labelledby="trace-title">
+          <div className="trace-copy">
+            <p className="project-kind">Distributed tracing & observability backend</p>
+            <h3 id="trace-title">TraceLab</h3>
+            <p className="project-intro">
+              Trace ingestion, processing, and storage.
+            </p>
+            <p>
+              FastAPI queues traces in Redis; a background worker writes them
+              to PostgreSQL. Docker, AWS EC2 deployment, metrics, and load
+              testing are part of the project.
+            </p>
+            <ProjectStack stack={trace.stack} name="TraceLab" />
+            <div className="project-links">
+              <Link
+                className="button"
+                href="/work/tracelab#main"
+                aria-label="Read TraceLab case study"
+              >
+                Read case study <Arrow />
+              </Link>
+              <a className="text-link external-link" href={trace.github}>
+                <SocialIcon name="github" /> GitHub <Arrow />
+              </a>
+            </div>
+          </div>
+          <div className="trace-notebook">
+            <TraceArchitecture />
+          </div>
+        </article>
         <article className="recall-feature" aria-labelledby="recall-title">
           <div className="recall-copy">
             <span className="project-kind">Full-stack AI research workspace</span>
@@ -140,36 +224,6 @@ export default function Home() {
               />
               <figcaption>A look inside the public controlled demo</figcaption>
             </figure>
-          </div>
-        </article>
-        <article className="trace-feature" aria-labelledby="trace-title">
-          <div className="trace-copy">
-            <p className="project-kind">Distributed tracing & observability backend</p>
-            <h3 id="trace-title">TraceLab</h3>
-            <p className="project-intro">
-              Trace ingestion, processing, and storage.
-            </p>
-            <p>
-              FastAPI queues traces in Redis; a background worker writes them
-              to PostgreSQL. Docker, AWS EC2 deployment, metrics, and load
-              testing are part of the project.
-            </p>
-            <ProjectStack stack={trace.stack} name="TraceLab" />
-            <div className="project-links">
-              <Link
-                className="button"
-                href="/work/tracelab#main"
-                aria-label="Read TraceLab case study"
-              >
-                Read case study <Arrow />
-              </Link>
-              <a className="text-link external-link" href={trace.github}>
-                <SocialIcon name="github" /> GitHub <Arrow />
-              </a>
-            </div>
-          </div>
-          <div className="trace-notebook">
-            <TraceArchitecture />
           </div>
         </article>
         <article className="spoton-feature" aria-labelledby="spoton-title">

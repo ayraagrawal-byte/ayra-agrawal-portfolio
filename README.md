@@ -30,12 +30,13 @@ The build uses webpack explicitly so the tested local and hosted build paths mat
 - `lib/content.ts` also contains the three short, source-backed “currently” notes.
 - `app/page.tsx`: homepage sections.
 - `app/work/[slug]/page.tsx`: source-backed TraceLab and Recall case studies.
+- `public/phantomcare-dashboard.jpg`: PhantomCare dashboard captured from a local run of the project repository on its committed analysis data, with the case queue collapsed to score bands.
 - `components/`: shared site shell, theme switch, and architecture figure.
 - `app/globals.css`: light/dark tokens, responsive layouts, focus states, and reduced-motion support.
 - `public/`: authentic demo screenshots and the approved phone-redacted public resume.
 - `app/fonts/`: self-hosted Fraunces and DM Sans variable fonts, optimized with `next/font/local`, and their SIL Open Font Licenses.
 
-All experience copy is based on the supplied resume. Technical claims were cross-checked against the source repositories on October 15, 2026. TraceLab performance numbers are reported local API ingestion results, not independently rerun benchmark results or production persistence throughput. SpotOn is credited as a three-person collaboration. Recall's public demo is controlled, with recorded execution rather than live inference.
+All experience copy is based on the supplied resume. Technical claims were cross-checked against the source repositories on October 15, 2026. TraceLab performance numbers are reported local API ingestion results, not independently rerun benchmark results or production persistence throughput. SpotOn is credited as a three-person collaboration. PhantomCare (HackPrinceton Fall 2026) is credited as a three-person team project; its 569-registration and 468-building figures, scoring rules, owner-ID hashing, and agent safeguards were checked against the repository and its committed analysis summary on November 16, 2026. Its live demo runs the deterministic fallback, not live AI. Recall's public demo is controlled, with recorded execution rather than live inference.
 
 ## Deployment
 
@@ -43,7 +44,7 @@ The repository is already linked to its own portfolio Vercel project. Preserve t
 
 Vercel's `VERCEL_PROJECT_PRODUCTION_URL` resolves the social-image base URL. For another host, set `NEXT_PUBLIC_SITE_URL` to the canonical public origin before building. Never put credentials in a `NEXT_PUBLIC_` variable.
 
-The original resume is not included. The public copy removes the phone number and associated icon with the user's approval; other resume content is retained.
+The private resume is not included and must never be committed here. `public/Ayra-Agrawal-Resume.pdf` is the public version: it omits the phone number; other resume content matches the private version.
 
 ## Accessibility and privacy
 

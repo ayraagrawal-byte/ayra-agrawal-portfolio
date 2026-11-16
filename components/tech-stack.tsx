@@ -31,6 +31,9 @@ const logos: Record<string, string> = {
   MediaPipe: "mediapipe",
   Gemini: "googlegemini",
   ElevenLabs: "elevenlabs",
+  pandas: "pandas",
+  Leaflet: "leaflet",
+  LangChain: "langchain",
 };
 export function TechLogo({ name }: { name: string }) {
   const logo = logos[name];
@@ -74,7 +77,7 @@ const groups = [
   {
     title: "Backend + data",
     items: ["FastAPI", "PostgreSQL", "Redis", "Supabase"],
-    more: ["pgvector", "SQLAlchemy", "Ollama", "MediaPipe", "Gemini"],
+    more: ["pgvector", "pandas", "SQLAlchemy", "Ollama", "LangChain", "MediaPipe", "Gemini"],
   },
   {
     title: "Tools + infrastructure",

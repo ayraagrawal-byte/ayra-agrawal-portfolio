@@ -7,8 +7,24 @@ export const links = {
 export const projects = [
   // Project facts are kept separate from homepage presentation.
   {
-    slug: "tracelab",
+    slug: "phantomcare",
     number: "01",
+    name: "PhantomCare",
+    category: "Data & AI engineering · HackPrinceton Fall 2026",
+    title: "Read registrations as buildings, not rows.",
+    description:
+      "A review platform that groups 569 Los Angeles County hospice registrations into 468 building-level records, scores them with versioned rules, and shows the evidence behind each case for human review.",
+    stack: ["Python", "pandas", "FastAPI", "Next.js", "Leaflet", "LangChain"],
+    github: "https://github.com/ayraagrawal-byte/PhantomCare",
+    demo: "https://phantomcare.vercel.app/",
+    devpost: "https://hackprinceton-fall-26.devpost.com/submissions/1304549-phantomcare",
+    role: "Built the data pipeline, versioned scoring engine, masked ownership network, FastAPI backend, optional investigation agent, and release checks. Ananya built the interactive Leaflet hotspot map and polished the demo frontend.",
+    decision:
+      "Scores come only from deterministic rules; the optional AI agent is read-only, and its output is rejected if it alleges fraud or cites evidence its tools never returned.",
+  },
+  {
+    slug: "tracelab",
+    number: "02",
     name: "TraceLab",
     category: "Backend systems & infrastructure",
     title: "A fast response is only the beginning.",
@@ -23,7 +39,7 @@ export const projects = [
   },
   {
     slug: "recall",
-    number: "02",
+    number: "03",
     name: "Recall",
     category: "Full-stack AI engineering",
     title: "An answer should come with its evidence.",
@@ -38,7 +54,7 @@ export const projects = [
   },
   {
     slug: "spoton",
-    number: "03",
+    number: "04",
     name: "SpotOn",
     category: "Computer vision · HackRU Fall 2026",
     title: "Make movement easier to inspect.",
@@ -60,9 +76,9 @@ export const currently = [
     href: "#experience",
   },
   {
-    label: "Learning",
-    text: "Frontend engineering through the Rutgers Blueprint fellowship.",
-    href: "#experience",
+    label: "Shipped",
+    text: "PhantomCare at HackPrinceton Fall 2026, with two teammates.",
+    href: "#work",
   },
   {
     label: "Exploring",
@@ -71,31 +87,6 @@ export const currently = [
   },
 ] as const;
 export const experience = [
-  {
-    slug: "blueprint",
-    org: "Rutgers Blueprint",
-    role: "Frontend Software Engineering Fellow",
-    date: "Oct 2026 — Present",
-    text: "Expanding my frontend engineering practice through Blueprint’s structured eight-week fellowship.",
-    context: "An eight-week frontend software engineering fellowship covering the path from responsive web foundations to typed React applications.",
-    contributions: [
-      "Building on my backend experience through guided work in HTML, CSS, responsive design, JavaScript, and browser interactivity.",
-      "Following a curriculum that progresses into TypeScript, typed API interactions, React components, hooks, state, and routing.",
-    ],
-    methods: ["React", "TypeScript", "HTML", "CSS"],
-    status: "Eight-week fellowship in progress",
-    links: [],
-    details: [
-      {
-        title: "Curriculum status",
-        text: "The October 8 and October 15 sessions were scheduled for HTML/CSS foundations, responsive design, JavaScript, DOM interaction, and events. The remaining topics are upcoming in the published syllabus, so they are described as planned learning rather than completed work.",
-      },
-      {
-        title: "What comes next",
-        text: "Scheduled sessions cover TypeScript and typed JSON/API work, React and reusable components, hooks and state management, routing, deployment fundamentals, and a collaborative final project with three or four fellows. The syllabus plans a December presentation; no finished application or certificate is claimed.",
-      },
-    ],
-  },
   {
     slug: "hack4impact",
     org: "Hack4Impact · Rutgers",
