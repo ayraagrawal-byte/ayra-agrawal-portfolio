@@ -278,7 +278,7 @@ export default function Home() {
           </p>
           <a
             className="text-link"
-            href="https://github.com/ayraagrawal-byte/rumad-incubator-2026"
+            href="https://github.com/jjjk45/rumad-incubator-2026"
           >
             Take a look <Arrow />
           </a>
